@@ -78,6 +78,26 @@ namespace LibreriaVaxi
 
         }
 
+        [Test]
+        public void GetListaNumeroImpares_InputMinimoMaximoIntervalos_ReturnsListaImpares()
+        {
+            Operacion op = new();
+            List<int> numerosImparesEsperados = new() { 5, 7, 9 };
+
+            List<int> resultados = op.GetListaNumeroImpares(5, 10);
+
+            Assert.That(resultados, Is.EquivalentTo(numerosImparesEsperados));
+            Assert.AreEqual(numerosImparesEsperados, resultados);
+            Assert.That(resultados, Does.Contain(5));
+            Assert.Contains(5, resultados);
+            Assert.That(resultados, Is.Not.Empty);
+            Assert.That(resultados.Count, Is.EqualTo(3));
+            Assert.That(resultados, Has.No.Member(100));
+            Assert.That(resultados, Is.Ordered);
+            Assert.That(resultados, Is.Unique);
+
+        }
+
 
     }
 }
