@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibreriaVaxi
 {
     [TestFixture]
-    public class OperacionNUnitTest
+    public class OperacionNUnitTests
     {
         [Test]
         public void SumarNumeros_InputDosNumeros_GetValorCorrecto()

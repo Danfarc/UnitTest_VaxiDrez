@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibreriaVaxi
 {
     [TestFixture]
-    public class ClienteNUnitTest
+    public class ClienteNUnitTests
     {
         private Cliente _cliente;
 

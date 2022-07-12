@@ -6,12 +6,28 @@ using System.Threading.Tasks;
 
 namespace LibreriaVaxi
 {
-    public class Cliente
+    public interface ICliente
+    {
+        string ClientNombre { get; set; }
+        int Descuento { get; set; }
+        int OrderTotal { get; set; }
+        bool IsPremium { get; set; }
+
+        public string CrearNombreCompleto(string nombre, string apellido);
+        public TipoCliente GetClienteDetalle();
+    }
+    public class Cliente : ICliente
     {
         public string ClientNombre { get; set; }
-        public int Descuento { get; set; } = 10;
-
+        public int Descuento { get; set; }
         public int OrderTotal { get; set; }
+        public bool IsPremium { get; set; }
+
+        public Cliente()
+        {
+            IsPremium = false;
+            Descuento = 10;
+        }
 
         public string CrearNombreCompleto(string nombre, string apellido)
         {
